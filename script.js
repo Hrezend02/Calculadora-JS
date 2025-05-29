@@ -114,4 +114,74 @@ function tangente() {
 
 const pi = 3.14159265358979323846;
 
-var exibirPi = document.getElementById('pi').innerHTML;
+//Funcao E
+function E() {
+  document.getElementById("resultado").textContent = Math.E; // Valor de e
+}
+
+//Ans
+let ultimaResposta = 0; // valor global
+
+function calculate() {
+    let expressao = document.getElementById('resposta').innerHTML;
+
+    // Substituições para que o eval funcione corretamente
+    expressao = expressao.replace(/÷/g, '/')
+                         .replace(/×/g, '*')
+                         .replace(/π/g, Math.PI)
+                         .replace(/Ans/g, ultimaResposta); // Substitui 'Ans' pelo valor real
+
+    try {
+        let resultado = eval(expressao);
+        if (!isFinite(resultado)) throw new Error("Divisão por zero");
+
+        document.getElementById('resposta').innerHTML = resultado;
+        ultimaResposta = resultado; // Salva para uso futuro
+    } catch (e) {
+        document.getElementById('resposta').innerHTML = 'Erro';
+    }
+
+    //teclado
+}
+document.addEventListener('keydown', function(event) {
+    const tecla = event.key;
+
+    // Se o visor estiver com erro, limpa automaticamente ao digitar algo
+    if (document.getElementById('resposta').innerText === 'Erro') {
+        cleanDisplay();
+    }
+
+    if (!isNaN(tecla)) {
+        insert(tecla); // números de 0 a 9
+    } else if (tecla === '.') {
+        insert('.');
+    } else if (tecla === '+' || tecla === '-' || tecla === '*' || tecla === '/') {
+        // Adiciona os operadores convertendo * e / para × e ÷ como no visor
+        if (tecla === '*') insert('×');
+        else if (tecla === '/') insert('÷');
+        else insert(tecla);
+    } else if (tecla === 'Enter' || tecla === '=') {
+        event.preventDefault(); // evita comportamento padrão do Enter
+        calculate();
+    } else if (tecla === 'Backspace') {
+        apagarUltimoDigito();
+    } else if (tecla === 'Escape') {
+        cleanDisplay();
+    }
+    //Apagar com teclado
+    function apagarUltimoDigito() {
+    let resposta = document.getElementById('resposta');
+    let texto = resposta.innerText;
+
+    if (texto.length > 1) {
+        resposta.innerText = texto.slice(0, -1);
+    } else {
+        resposta.innerText = '0';
+    }
+}
+
+});
+
+
+
+

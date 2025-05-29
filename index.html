@@ -28,8 +28,8 @@
                         <button id="graus" onclick="graus()">Deg | Rad</button>
                     </div>
                 <button>x!</button>
-                <button>(</button>
-                <button>)</button>
+                <button id="abrirParenteses" onclick="insert('(')">(</button>
+                <button id="fecharParenteses" onclick="insert(')')">)</button>
                 <button>%</button>
                 <button id="clean" onclick="cleanDisplay()">CE</button>
                 </div>
@@ -43,7 +43,7 @@
                 <button class="operacao" onclick="insert('÷')">÷</button>                
                 </div>
                 <div class="fileira">
-                <button id="pi" onclick="pi()">π</button>
+                <button id="pi" onclick="insert('π')">π</button>
                 <button id="cosseno" onclick="cosseno()">cos</button>
                 <button>log</button>
                 <button class="azul" onclick="insert('4')">4</button>
@@ -52,7 +52,7 @@
                 <button class="operacao" onclick="insert('×')">×</button>                
                 </div>
                 <div class="fileira">
-                <button>e</button>
+                <button onclick="insert(2.71828)">e</button>
                 <button id="tangente" onclick="tangente()">tan</button>
                 <button>√</button>
                 <button class="azul" onclick="insert('1')">1</button>
@@ -61,7 +61,7 @@
                 <button class="operacao" onclick="insert('-')">-</button>                
                 </div>
                 <div class="fileira">
-                <button>Ans</button>
+               <button onclick="inserirAns()">Ans</button>
                 <button>EXP</button>
                 <button>x^y</button>
                 <button class="azul" onclick="insert('0')">0</button>
