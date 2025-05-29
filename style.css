@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+}
+
+body {
+    background-color: darkgray;
+    overflow: hidden;
+  }
+
+  p, h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+  }
+
+  button{
+    border: none;
+  }
+
+.containerMain{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerCalculadora{
+    background-color: azure;
+    width: auto;
+    height: auto;
+    padding: 30px 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerVisor{
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     align-items: start;
+     justify-content: space-between;
+     border: 3px solid darkgray;
+     padding: 15px 20px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+}
+
+.containerHistorico {
+    display: flex;
+    flex-direction: row;
+    flex-direction: start;
+    justify-content: start;
+}
+
+.containerHistorico img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.containerNumeros{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.containerASN{
+    font-size: 15px;
+}
+
+.resposta p{
+    font-size: 40px;
+}
+
+.containerButtons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileira{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    gap: 5px;
+}
+
+.fileira button{
+    width: 50px;
+    padding: 5px 0px;
+    cursor: pointer;
+    background-color: darkgray;
+    font-size: 15px;
+    border-radius: 15px;
+    transition: background-color 0.4s;
+}
+
+.fileira button:hover{
+    background-color: gray;
+}
+
+.btnDiferente{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnDiferente button{
+    width: 105px !important; 
+}
