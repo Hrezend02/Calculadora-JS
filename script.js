@@ -182,6 +182,26 @@ document.addEventListener('keydown', function(event) {
 
 });
 
+//ATÉ AQUI OK.....................................................................
+
+function fatorial() {
+    let valorTexto = document.getElementById('resposta').innerText;
+    let numero = parseInt(valorTexto);
+
+    if (isNaN(numero) || numero < 0) {
+        document.getElementById('resposta').innerText = "Erro";
+        return;
+    }
+
+    let resultado = 1;
+    for (let i = 2; i <= numero; i++) {
+        resultado *= i;
+    }
+
+    document.getElementById('resposta').innerText = resultado;
+}
+
+
 
 
 
