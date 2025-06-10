@@ -201,7 +201,56 @@ function fatorial() {
     document.getElementById('resposta').innerText = resultado;
 }
 
+function porcentagem() {
+  let visor = document.getElementById('resposta');
+  if (visor.textContent === '0' || visor.textContent === 'Erro') {
+    visor.textContent = '%';
+  } else {
+    visor.textContent += '%';
+  }
+}
 
+function calculate() {
+  let visor = document.getElementById('resposta');
+  let exp = visor.textContent;
 
+  // troca 25%1000 por (25/100)*1000
+  exp = exp.replace(/(\d+)%(\d+)/g, '($1/100)*$2');
+
+  // troca símbolos para JS
+  exp = exp.replace(/×/g, '*').replace(/÷/g, '/');
+
+  try {
+    let resultado = eval(exp);
+    visor.textContent = resultado;
+  } catch {
+    visor.textContent = 'Erro';
+  }
+}
+
+function ln() {
+  let visor = document.getElementById('resposta');
+  let valor = parseFloat(visor.textContent);
+
+  if (valor > 0) {
+    visor.textContent = Math.log(valor);
+  } else {
+    visor.textContent = 'Erro';
+  }
+}
+
+// FUNÇÃO DO LOG
+function log() {
+  let visor = document.getElementById('resposta').innerText;
+  let num = Number(visor);
+
+  if (num <= 0 || isNaN(num)) {
+    document.getElementById('resposta').innerText = "Erro";
+    return;
+  }
+
+  let resultado = Math.log10(num);
+  document.getElementById('resposta').innerText = resultado;
+}
 
 
